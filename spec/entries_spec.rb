@@ -4,8 +4,6 @@ describe Entries do
 
   describe '.all' do
     it 'returns all the entries in the database' do
-      connection = PG.connect(dbname: 'diary_test')
-
       entry = Entries.create(body: 'A usual day at Makers', title: 'Makers')
       Entries.create(body: 'Just another day at Makers', title: 'Makers next')
 

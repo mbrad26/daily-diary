@@ -13,6 +13,7 @@ feature 'Adding new entry' do
     fill_in :add_entry, with: 'Today was a good day'
     click_button 'Submit'
 
+    expect(current_path).to eq '/entries'
     expect(page).to have_content 'Entry title'
   end
 end

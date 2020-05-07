@@ -5,7 +5,21 @@ feature 'Viewing entries' do
 
     visit '/entries'
 
-    expect(page).to have_link('Today entry', href: '/entries/today.id')
-    expect(page).to have_link('Yesterday entry', href: '/entries/yesterday.id')
+    expect(page).to have_link('Today entry')
+    expect(page).to have_link('Yesterday entry')
+  end
+
+  scenario 'a user can click on a title and see the full entry' do
+    today = Entries.create(body: 'Today was a great day for coding', title: 'Today entry')
+
+    visit '/entries'
+    click_link 'Today entry'
+
+    expect(current_path).to eq "/entries/#{today.id}"
+    expect(page).to have_content "#{today.body}"
+
+    click_button 'Back to Index'
+
+    expect(current_path).to eq '/entries'
   end
 end

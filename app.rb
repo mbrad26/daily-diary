@@ -28,7 +28,9 @@ class Diary < Sinatra::Base
   end
 
   get '/entries/:id' do
-    Entries.find(id: params[:id])
+    p "PARAMS #{params}"
+    @entry = Entries.find(id: params[:id])
+    p @entry
     erb :'entries/entry'
   end
 
