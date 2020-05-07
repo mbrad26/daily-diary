@@ -5,4 +5,8 @@
   </label>
 </form>
 
-<p>Today was a good day</p>
+<ul>
+  <% @result.each do |entry| %>
+  <li><%= entry['body'] %></li>
+  <% end %>
+</ul>
