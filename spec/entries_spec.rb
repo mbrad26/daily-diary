@@ -14,6 +14,10 @@ describe Entries do
   end
 
   describe '.create' do
+    it 'creates a new entry' do
+      Entries.create(body: 'Great day today at Makers')
 
+      expect(Entries.all).to include 'Great day today at Makers'
+    end
   end
 end

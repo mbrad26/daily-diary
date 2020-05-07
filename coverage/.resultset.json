@@ -19,19 +19,11 @@
           null,
           null,
           1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Desktop/makers/daily-diary/lib/entries.rb": {
-        "lines": [
           1,
           1,
-          2,
           null,
-          2,
-          48,
+          1,
+          null,
           null,
           null
         ]
@@ -72,6 +64,6 @@
         ]
       }
     },
-    "timestamp": 1588838595
+    "timestamp": 1588843611
   }
 }

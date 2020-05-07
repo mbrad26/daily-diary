@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'pg'
+require './lib/entries'
 
 class Diary < Sinatra::Base
 
@@ -8,8 +8,8 @@ class Diary < Sinatra::Base
   end
 
   get '/entries' do
-    connection = PG.connect(dbname: 'diary_test')
-    @result = connection.exec("SELECT * FROM entries;")
+    @result = Entries.all
+    p @result
     erb :'/entries/index'
   end
 
@@ -21,10 +21,11 @@ class Diary < Sinatra::Base
     erb :'/entries/new'
   end
 
-  post '/entries/new' do
-    entry = params['add_entry']
-    connection = PG.connect(dbname: 'diary_test')
-    connection.exec("INSERT INTO entries (body) VALUES('#{entry}');")
+  post '/entry' do
+    p params['add_entry']
+    p params[:add_entry]
+    p params
+    Entries.create(body: params['add_entry'])
     redirect '/entries'
   end
 
