@@ -9,7 +9,7 @@ class Diary < Sinatra::Base
 
   get '/entries' do
     @result = Entries.all
-    p @result
+    p "Result #{@result}"
     erb :'/entries/index'
   end
 
@@ -22,10 +22,8 @@ class Diary < Sinatra::Base
   end
 
   post '/entry' do
-    p params['add_entry']
-    p params[:add_entry]
-    p params
-    Entries.create(body: params['add_entry'])
+    p "Params #{params}"
+    Entries.create(body: params['add_entry'], title: params['title'])
     redirect '/entries'
   end
 
