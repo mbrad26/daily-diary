@@ -6,5 +6,9 @@ class Diary < Sinatra::Base
     'Hello World!'
   end
 
+  get '/entries' do
+    erb :'/entries/index'
+  end
+
   run! if app_file == $0
 end
