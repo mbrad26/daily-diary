@@ -1,0 +1,2 @@
+ALTER TABLE entries
+  ADD COLUMN title VARCHAR(60);
