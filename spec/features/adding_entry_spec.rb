@@ -10,4 +10,11 @@ feature 'Adding new entry' do
     expect(page).to have_button 'Submit'
   end
 
+  scenario 'a user can add a new entry to the diary' do
+    visit '/entries/new'
+    fill_in :add_entry, with: 'Today was a good day'
+    click_button 'Submit'
+
+    expect(page).to have_content 'Today was a good day'
+  end
 end

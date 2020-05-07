@@ -18,5 +18,9 @@ class Diary < Sinatra::Base
     erb :'/entries/new'
   end
 
+  post '/entries/new' do
+    redirect '/entries'
+  end
+
   run! if app_file == $0
 end
