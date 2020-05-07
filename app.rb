@@ -22,9 +22,14 @@ class Diary < Sinatra::Base
   end
 
   post '/entry' do
-    p "Params #{params}"
+    # p "Params #{params}"
     Entries.create(body: params['add_entry'], title: params['title'])
     redirect '/entries'
+  end
+
+  get '/entries/:id' do
+    Entries.find(id: params[:id])
+    erb :'entries/entry'
   end
 
   run! if app_file == $0

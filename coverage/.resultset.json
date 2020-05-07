@@ -37,14 +37,24 @@
           1,
           null,
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
       "/Users/student/Desktop/makers/daily-diary/spec/features/adding_entry_spec.rb": {
         "lines": [
-          null,
-          null,
-          null,
           1,
           1,
           1,
@@ -75,8 +85,23 @@
           null,
           null
         ]
+      },
+      "/Users/student/Desktop/makers/daily-diary/spec/features/viewing_entry_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1588855230
+    "timestamp": 1588874461
   }
 }

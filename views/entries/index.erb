@@ -1,12 +1,14 @@
-<form action="/entries" method="post">
-  <label for="">
-    Add a new entry
-    <input type="submit" value="Add entry">
-  </label>
-</form>
+<div class="container">
+  <form action="/entries" method="post">
+    <label for="">
+      Add a new entry
+      <input type="submit" value="Add entry">
+    </label>
+  </form>
 
-<ul>
-  <% @result.each do |entry| %>
-  <li><%= entry.title %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @result.each do |entry| %>
+    <li><%= entry.title %></li>
+    <% end %>
+  </ul>
+</div>

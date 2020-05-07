@@ -32,4 +32,15 @@ class Entries
     result = connection.exec("INSERT INTO entries (body, title) VALUES('#{body}', '#{title}') RETURNING id, body, title;")
     Entries.new(id: result[0]['id'], body: result[0]['body'], title: result[0]['title'])
   end
+
+  def self.find(id:)
+    if ENV['ENVIRONMENT'] = 'test'
+      connection = PG.connect(dbname: 'diary_test')
+    else
+      connection = PG.connect(dbname: 'diary')
+    end
+
+    result = connection.exec("SELECT * FROM entries WHERE id = #{id};")
+    Entries.new(id: result[0]['id'], body: result[0]['body'], title: result[0]['title'])
+  end
 end

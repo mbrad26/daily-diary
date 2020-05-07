@@ -1,6 +1,3 @@
-# As a user
-# So that I can keep a daily diary
-# I want to be able to add a new Diary Entry
 feature 'Adding new entry' do
   scenario 'a user can visit entries page and press Add entry button' do
     visit '/entries'
